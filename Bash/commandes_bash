@@ -1,0 +1,19 @@
+Bash - Commandes de bases
+
+pwd : afficher le répertoire courant
+ls : afficher le contenu d'un répertoire
+ls -l : affichage détaillé
+ls - a :  affichage avec les fichiers cachés (commencent par .)
+option --help : pour afficher l'aide des commandes
+cd destination : changer de répertoire
+mkdir : créer un répertoire
+mkdir -p : créer une arborescence de répertoire
+rm fichier : supprimer un fichier
+rm -r dossier: supprimer un dossier
+cp source destination : copier un fichier
+cp -r source destination : copier un dossier
+mv source destination : déplacer un fichier
+cat afficher le contenu d'un fichier texte
+touch : pour créer un fichier
+> : redirection du résultat d'une commande
+man : afficher le manuel d'une commande
