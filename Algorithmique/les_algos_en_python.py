@@ -192,6 +192,10 @@ def som_dig2(nb):
     u = nb-c*100-d*10
     return c+d+u
 
+## v2 : sans convertir en string en généralisant
+def som_dig3(nb):
+    
+
 ####### ALGO 12
 
 
