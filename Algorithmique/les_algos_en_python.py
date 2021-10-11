@@ -194,13 +194,59 @@ def som_dig2(nb):
 
 ## v2 : sans convertir en string en généralisant
 def som_dig3(nb):
-    
+    n_max =1
+    while nb % 10**n_max != nb :
+        n_max += 1
+
+    som = 0
+    for k in range(n_max,0,-1):
+        coef = nb//10**(k-1)
+        som += coef
+        nb -= coef*10**(k-1)
+
+    return som
 
 ####### ALGO 12
+# itératif
+def som_i(n):
+    som = 0
+    for i in range(1,n+1):
+        som += i
+    return som
 
+# récursif
+def som_r(n):
+    if  n == 0:
+        return 0
+    else:
+        return n + som_r(n-1)
 
 ####### ALGO 13
+# itératif
+def fac_i(n):
+    fac = 1
+    for i in range(1,n+1):
+        fac *= i
+    return fac
 
+# récursif
+def fac_r(n):
+    if  n == 0:
+        return 1
+    else:
+        return n * fac_r(n-1)
 
 ####### ALGO 14
-    
+ # itératif
+def fibo_i(n):
+    a,b = 0,1
+    for i in range(n):
+         a,b = b,a+b
+    return a
+
+# récursif
+def fibo_r(n):
+    if n < 2:
+        return n
+    else:
+        return fibo_r(n-1) + fibo_r(n-2)
