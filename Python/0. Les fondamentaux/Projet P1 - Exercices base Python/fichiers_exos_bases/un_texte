@@ -1,0 +1,57 @@
+###############################################################################
+""""""""""""
+"""   Exo5   """
+""""""""""""
+def   conv_time(s):
+            reste   =   s
+            annee   =   int(reste   //   (60*60*24*365.25))
+            reste   =   reste   %   (60*60*24*365.25)
+            mois   =      int(reste   //   (60*60*24*30.4375))
+            reste   =   reste   %   (60*60*24*30.4375)
+            jour   =   int(reste   //   (60*60*24))
+            reste   =   reste   %   (60*60*24)
+            heure   =   int(reste   //   (60*60))
+            reste   =   reste   %   (60*60)
+            minute   =   int(reste   //   60)
+            seconde   =   int(reste   %   60)
+            
+            annee   =   format(annee,",d").replace(",","   ")   
+            
+            print(f"{s}   secondes   correspondent   à   :",
+                              f"{annee}   années   {mois}   mois   {jour}   jours",
+                              f"{heure}   heures   {minute}   minutes   {seconde}   secondes",   sep="\n")
+
+import   sys
+from   numpy.random   import   *
+s   =   randint(0,sys.maxsize)
+conv_time(s)
+
+
+def   conv_speed(speed):
+            kmh   =   round(1.609*speed,2)
+            ms   =   round(1609/3600*speed,2)
+            print(f"{speed}   miles/h   est   équivalent   à   :",
+                              f"   -   {kmh}   km/h",
+                              f"   -   {ms}   m/s",   sep="\n")
+
+speed   =   randint(0,300)
+conv_speed(speed)
+
+
+
+
+###############################################################################
+""""""""""""
+"""   Exo6   """
+""""""""""""
+def   pascal(i,k):
+            if   i   <   2   or   k   <   2   or   k   ==   i+1:
+                        return   1
+            else:
+                        return   pascal(i-1,k-1)+pascal(i-1,k)
+            
+plus_grd_coef   =   lambda   ligne   :   pascal(ligne,ligne//2+1)
+
+list(map(plus_grd_coef,list(range(1,11))))
+j'entre une nouvelle ligne
+et encore une

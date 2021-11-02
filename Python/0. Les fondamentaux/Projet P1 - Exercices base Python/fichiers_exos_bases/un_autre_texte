@@ -1,0 +1,20 @@
+Exercice 7 : manipulations de dictionnaires
+Écrire une fonction qui échange les clés et les valeurs d'un dictionnaire (ce qui permettra par exemple de transformer un dictionnaire anglais/français en un dictionnaire français/anglais). On suppose qu’il n’y a pas de valeurs en double pour simplifier.
+Exercice 8 : manipulations de fichiers textes
+Écrire un script qui permet de créer et de relire aisément un fichier texte. Votre programme demandera d'abord à l'utilisateur d'entrer le nom du fichier. Ensuite il lui proposera le choix, soit d'enregistrer de nouvelles lignes de texte, soit d'afficher le contenu du fichier. L'utilisateur devra pouvoir entrer ses lignes de texte successives en utilisant simplement la touche <Enter> pour les séparer les unes des autres. Pour terminer les entrées, il lui suffira d'entrer une ligne vide (c'est-à-dire utiliser la touche <Enter> seule).
+Écrire un script qui génère automatiquement un fichier texte contenant les tables de multiplication de 2 à 30 (chacune d'entre elles incluant 20 termes seulement).
+
+Écrire un script qui recopie un fichier texte en triplant tous les espaces entre les mots.
+
+À partir de deux fichiers préexistants A et B, construisez un fichier C qui contienne alternativement une ligne de A, une ligne de B... et ainsi de suite jusqu'à atteindre la fin de l'un des deux fichiers originaux. Complétez ensuite C avec les éléments restant sur l'autre.
+
+Exercice 9 : quelques notes
+
+Écrire un programme permettant d'entrer des notes d'élèves d’élèves sur 20 jusqu’à ce l’utilisateur saisisse une note vide. Construire une liste et à chaque nouvelle entrée, afficher le nombre de notes entrées, la note la plus élevée, la note la plus basse, la moyenne de toutes les notes.
+Facultatif : utiliser le module pickle pour enregistrer la liste de note et la récupérer si nécessaire. À chaque fois que l’utilisateur commence, lui demander s’il veut continuer une des listes existantes, en créer une nouvelle ou écraser une de celles existantes.
+Exercice 10 : une première base de données
+Écrire un script qui crée un système de base de données fonctionnant à l'aide d'un dictionnaire, et dans lequel vous mémoriserez les noms d'une série d’individus, leur âge, leur sexe et leur taille. Votre script devra comporter 4 fonctions : la première pour le remplissage du dictionnaire, la seconde pour sa consultation, la troisième pour sa sauvegarde au format texte et la quatrième pour reconstituer le dictionnaire à partir du fichier texte.
+La fonction de remplissage doit permettre d’ajouter les informations des individus au dictionnaire : le nom de l’individu servira de clé d'accès, et les valeurs seront constituées de tuples (âge, sexe, taille), dans lesquels l'âge sera exprimé en années (donnée de type entier), le sexe au format ‘F’ ou ‘M’ et la taille en mètres (donnée de type réel).
+La fonction de consultation doit permettre à l’utilisateur d’obtenir à partir d’un nom le triplet « âge, sexe, taille » correspondant. Le résultat de la requête devra être une ligne de texte bien formatée, telle par exemple : « Nom : Xabi - âge : 25 ans - sexe : M - taille : 1.74 m ».
+La fonction de sauvegarde doit stocker dans chaque ligne de votre fichier texte un élément du dictionnaire. Elle sera formatée de manière à bien séparer la clé et les différentes valeurs.
+Au début de chaque utilisation, demander à l’utilisateur ce qu’il souhaite faire (compléter ou consulter un dictionnaire)
