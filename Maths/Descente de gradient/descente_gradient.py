@@ -1,4 +1,4 @@
-import random as rd
+from random import uniform
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -10,7 +10,7 @@ def desc_grad(f, alpha=0.05, epsilon=0.0001, i_max=1000, h=1e-10,
     une fonction f d'une seule variable
     afin d'en trouver le minimum """
     
-    a = rd.randint(inf, sup)
+    a = uniform(inf, sup)
     
     dfa = (f(a+h)-f(a-h))/(2*h)
     i = 0
@@ -25,7 +25,7 @@ def desc_grad(f, alpha=0.05, epsilon=0.0001, i_max=1000, h=1e-10,
         ##### Calcul de la dérivée de f en a f'(a)
         dfa = (f(a+h)-f(a-h))/(2*h)
         
-    return a_liste
+    return np.array(a_liste), i
 
 
 #fonctions à tester
@@ -36,7 +36,8 @@ f = lambda x: 3*x**2 - 12
 #f = lambda x : x * np.cos(x)
 #f = lambda x : np.arctan(x*x)
 
-fig, ax = plt.subplots(figsize=(12,8))
+#### AFFICHAGE SIMPLE DE LA FONCTION ET DE LA DESCENTE DE GRADIENT
+"""fig, ax = plt.subplots(figsize=(12,8))
 
 # Affichage de la courbe de f
 x = np.linspace(-10,10,200)
@@ -45,47 +46,33 @@ ax.plot(x,f(x))
 a = np.array(desc_grad(f))
 ax.scatter(a, f(a), c='r')
 plt.show()
+"""
 
-
-
-
-#### POUR ESSAYER DE FAIRE L'AFFICHAGE ANIMÉ :
+#### AFFICHAGE ANIMÉ
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 %matplotlib qt5
 
-fig, ax = plt.subplots()
+# Données nécessaires
+x = np.linspace(-10,10,200) #des points pour afficher la courbe
+fx = f(x)
+a, nb_iter = desc_grad(f) #les étapes de la descente et le nombre d'itérations
+fa = f(a)
+
+fig, ax = plt.subplots(figsize=(12,8))
+ax.plot(x,fx)
 xdata, ydata = [], []
 ln, = plt.plot([], [], 'ro')
 
-def init():
-    ax.set_xlim(0, 2*np.pi)
-    ax.set_ylim(-1, 1)
-    return ln,
-
-def update(frame):
-    xdata.append(frame)
-    ydata.append(np.sin(frame))
+def update(i):
+    xdata.append(a[i])
+    ydata.append(fa[i])
     ln.set_data(xdata, ydata)
-    return ln,
+    #ajout de titre et infos sur les graphiques
+    ax.set_title(f'dernière valeur prise par x : {a[i]}', size = 16)
+    fig.suptitle(f'itération {i}', size=50)
+    #return ln,
 
-ani = FuncAnimation(fig, update, frames=np.linspace(0, 2*np.pi, 128),
-                    init_func=init, blit=True)
+ani = FuncAnimation(fig, update, frames=nb_iter, interval=150, repeat=False)
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
