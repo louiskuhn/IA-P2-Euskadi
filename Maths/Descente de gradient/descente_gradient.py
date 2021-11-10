@@ -40,13 +40,10 @@ fig, ax = plt.subplots(figsize=(12,8))
 
 # Affichage de la courbe de f
 x = np.linspace(-10,10,200)
-fx = list(map(f, x))
-ax.plot(x,fx)
-
+ax.plot(x,f(x))
 # Ajout des différents points de notre descente de gradient
-a_liste = desc_grad(f)
-fa = list(map(f,a_liste))
-ax.scatter(a_liste, fa, c='r')
+a = np.array(desc_grad(f))
+ax.scatter(a, f(a), c='r')
 plt.show()
 
 
