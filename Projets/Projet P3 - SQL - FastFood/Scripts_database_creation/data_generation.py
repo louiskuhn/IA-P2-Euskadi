@@ -48,7 +48,7 @@ resto.park = np.random.randint(2,size=12)
 perso_id = [k for k in range(1,151)] #les id des 150 employés qu'on va créer juste après
 
 def hist_ann(annee, nb=120, perso_id=perso_id):
-    df = pd.DataFrame(columns=['ann','ind','rest','post','dom','sup','sal','note'])
+    df = pd.DataFrame(columns=['ann','ind','rest','post','dom','sup','note','sal'])
     df.ind = random.sample(perso_id,nb) #on en sélectionne 120 en poste actuellement
     df.rest = np.random.randint(1,13,nb) #on leur affecte aléatoirement un resto
     df.ann = annee
@@ -76,7 +76,7 @@ hist = pd.concat([hist_ann('2021'),
 #On ajoute des postes employes en 2021 pour les personnes qui n'auraient pas été tirées
 nb_non_attribues = len(list(set(perso_id)-set(hist.ind)))
 if nb_non_attribues>0:
-    hist_aut = pd.DataFrame(columns=['ann','ind','rest','post','dom','sup','sal','note'])
+    hist_aut = pd.DataFrame(columns=['ann','ind','rest','post','dom','sup','note','sal'])
     hist_aut.ind = list(set(perso_id)-set(hist.ind))
     hist_aut.rest = np.random.randint(1,13,nb_non_attribues)
     hist_aut.post = 'employe'
@@ -86,8 +86,9 @@ if nb_non_attribues>0:
 
 hist.dom = np.random.choice(['cuisine','caisse'],hist.shape[0])
 hist.loc[(hist.post=='directeur'),'sup']='nan'
-hist.sal = np.random.randint(1200,3501,len(hist))
 hist.note = np.random.randint(0,11,len(hist))
+hist.sal = np.random.randint(1200,3501,len(hist))
+
 
 for r in range(1,13):
     filtre_r = (hist.rest==r)
