@@ -8,19 +8,35 @@ WHERE pays='France' AND code_postal LIKE '64%' AND annee = 2021;
 
 
 /*b. Extraire l’ingrédient le plus utilisé dans chaque département. (Colonne 1 : département, Colonne 2 : ingrédient, Colonne 3 : Utilisation ingrédient)*/
-SELECT departement, ingredient, MAX(quantite) as 'quantite' FROM(
-SELECT SUBSTR(r.code_postal,1,2) AS 'departement', Ingredients.ingredient AS 'ingredient', SUM(r2.quantite) AS 'quantite'
-FROM Orders o
-INNER JOIN Restaurants r ON r.idRestaurant=o.idRestaurant
-INNER JOIN Orders_items oi ON oi.idCommande=o.idCommande
-LEFT JOIN Menus m ON oi.idMenu=m.idMenu
-LEFT JOIN Recettes r2 ON m.idPlat=r2.idItem
-	OR m.idBoisson=r2.idItem
-	OR m.idDessert=r2.idItem
-	OR oi.idItem=r2.idItem
-INNER JOIN Ingredients on r2.idIngredient = i.idIngredient
-GROUP BY SUBSTR(r.codePostal,1,2), i.idIngredient)
-GROUP BY departement;
+SELECT SUBSTR(r.code_postal,1,2) AS dpt, oi.item_id, oi.quantite AS quantite_commandee, m.*, r2.*
+FROM Restaurants r
+INNER JOIN Orders o ON o.resto_id = r.id 
+INNER JOIN Orders_items oi ON oi.order_id = o.id
+LEFT JOIN Menus m ON m.id = oi.item_id
+LEFT JOIN Recettes r2
+ON m.plat = r2.item_id
+	OR m.dessert = r2.item_id
+	OR m.boisson = r2.item_id
+	OR oi.item_id = r2.item_id ;
+
+
+SELECT *
+FROM Menus m 
+LEFT JOIN Recettes r2
+ON m.plat = r2.item_id OR m.dessert = r2.item_id OR m.boisson = r2.item_id;
+
+
+SELECT *
+FROM  Items i
+LEFT JOIN Menus m
+ON m.plat = i.id OR m.dessert = i.id OR m.boisson = i.id
+UNION 
+SELECT *
+FROM  Items i
+RIGHT JOIN Menus m
+ON m.plat = i.id OR m.dessert = i.id OR m.boisson = i.id
+JOIN Recettes r on i.id = r.item_id
+JOIN Ingredients i2 on i2.id = r.ing_id;
 
 /*c. Extraire le restaurant ayant la masse salariale la moins importante (somme des salaires) (Colonne 1 : Restaurant, Colonne 2 : masse salariale)*/
 

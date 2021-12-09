@@ -139,15 +139,15 @@ menus.dessert = [6,6,7,7]
 #Table Ingredients: id, nom, prix
 ing = pd.DataFrame(columns=['nom','prix'])
 ing.nom = ['pain','steak','salade','tomate','cornichons','fromage','poulet','panure','sauce','patates','huile',
-    'vinaigrette','croutons','glace','caramel','coulis']
-ing.prix = [0.5,1.1,0.8,0.3,0.2,0.4,1,0.3,0.1,0.1,3,1.5,0.1,0.9,0.5,0.6]
+    'vinaigrette','croutons','glace','caramel','coulis','coca','icetea']
+ing.prix = [0.5,1.1,0.8,0.3,0.2,0.4,1,0.3,0.1,0.1,3,1.5,0.1,0.9,0.5,0.6,0.4,0.5]
 
 #------------------------------------------#
 #Table Recettes: id, item_id, ing_id, unites
 recette = pd.DataFrame(columns=['item','ing','unites'])
-recette.item = [1]*7 + [2]*7 + [3]*3 + [4]*2 + [5]*5 + [6]*2 + [7]*2
-recette.ing = [1,2,3,4,5,6,9] + [1,2,3,4,5,6,9] + [7,8,9] + [10,11] + [3,6,7,12,13] + [14,15] + [14,16]
-recette.unites = [1,1,0.1,0.2,1,1,1] + [1,2,0.1,0.2,1,2,1] + [1,1,1] + [2,0.2] + [0.5,1,1,0.3,1] + [1,1] + [1,1]
+recette.item = [1]*7 + [2]*7 + [3]*3 + [4]*2 + [5]*5 + [6]*2 + [7]*2 + [8,9,10] + [11,12,13]
+recette.ing = [1,2,3,4,5,6,9] + [1,2,3,4,5,6,9] + [7,8,9] + [10,11] + [3,6,7,12,13] + [14,15] + [14,16] + [17]*3 + [18]*3
+recette.unites = [1,1,0.1,0.2,1,1,1] + [1,2,0.1,0.2,1,2,1] + [1,1,1] + [2,0.2] + [0.5,1,1,0.3,1] + [1,1] + [1,1] + [1,2,3]*2
 
 #------------------------------------#
 #Table Stocks: ing_id, rest_id, unites
