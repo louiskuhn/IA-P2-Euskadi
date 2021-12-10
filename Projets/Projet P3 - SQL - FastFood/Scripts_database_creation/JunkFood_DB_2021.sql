@@ -66,8 +66,8 @@ CREATE TABLE Items (
 CREATE TABLE Menus (
 	id INT NOT NULL,
 	plat INT NOT NULL,
-	dessert INT NOT NULL,
 	boisson INT NOT NULL,
+	dessert INT NOT NULL,
 	PRIMARY KEY (id)
 );
 
