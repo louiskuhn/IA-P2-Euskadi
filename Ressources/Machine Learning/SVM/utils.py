@@ -10,7 +10,7 @@ def frontiere(model, ax=None, supp_vect=True):
     xlim = ax.get_xlim()
     ylim = ax.get_ylim()
     
-    # création d'une grille pour évaluer le modèle
+    # création d'une grille
     x_grid = np.linspace(xlim[0], xlim[1], 100)
     y_grid = np.linspace(ylim[0], ylim[1], 100)
     xx, yy = np.meshgrid(x_grid, y_grid)
