@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     return render_template("home.html")
 
-@app.route('/', methods=['POST'])
+@app.route('/envoi-infos', methods=['POST'])
 def text_box():
     text = request.form['username']
     processed_text = text.upper()
