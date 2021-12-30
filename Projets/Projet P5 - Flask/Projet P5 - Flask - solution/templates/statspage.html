@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Stats{% endblock %}
+{% block content %}
+    <h1>Veuillez importer un jeu de données au format ".csv"</h1>
+    <form action="{{ url_for('data_stats') }}" method="POST" enctype=multipart/form-data>
+        <input type="file" name="file" accept=".csv">
+        <label for="sep">Séparateur</label>
+        <select name="sep">
+            <option value=",">Virgule</option>
+            <option value=";">Point virgule</option>
+            <option value=" ">Espace</option>
+            <option value="\t">Tabulation</option>
+        </select>
+        <button type="submit">Charger les données</button>
+    </form>
+
+    {% if data %}
+        <h1>Quelques statistiques descriptives sur votre jeu de données</h1>
+        <h2 style="text-align: center;">Variables de type numérique</h2>
+        {{ data[0]|safe }}
+        <h2 style="text-align: center;">Variables de type caractère</h2>
+        {{ data[1]|safe }}
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}FormPage{% endblock %}
+{% block content %}
+    <h1>Veuillez entrer les informations demandées</h1>
+    <form action="{{ url_for('post_form')}}" method="POST">
+        <h2>Tous les champs sont obligatoires.</h2>
+        <h4>Prénom</h4> <input type="text" name="prenom" required>
+        <h4>Nom</h4> <input type="text" name="nom" required>
+        <h4>Sexe</h4>
+        Homme <input type="radio" name="sex" id="male" value="male" required>
+        Femme <input type="radio" name="sex" id="female" value="female" required>
+        <h4>Pseudo</h4>
+        <input type="text" name="user" required><br>
+        <button type="submit">Valider ces informations</button>
+    </form>
+{% endblock %}

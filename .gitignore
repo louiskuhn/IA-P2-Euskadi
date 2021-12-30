@@ -447,3 +447,5 @@ MigrationBackup/
 # End of https://www.gitignore.io/api/vim,linux,macos,windows,libreoffice,visualstudio
 
 .ipynb_checkpoints
+
+/Projets/Projet\ P5\ -\ Flask/Projet\ P5\ -\ Flask\ -\ solution/mnist_model.sav
