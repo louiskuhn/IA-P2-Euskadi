@@ -10,7 +10,7 @@ As to do so, you will have to :
 1. Analyse and visualize the dataset.
 2. Go through all the preprocessing steps in order to fit at least two different models and compare them after of course having tuned the hyperparameters for each model.
 
-**THIS PROJECT IS DUE TO TOMORROW 16:00**
+**THIS PROJECT IS DUE TO TOMORROW 17:00**
 
 **Indications:** for those who feel confortable, you can try to use the sklearn pipeline class but this is not an obligation nor a necessity. Feel free to experiment. Just remind that deadline is tomorrow 16:00 and there won't be no extra time for once...
 
