@@ -3,8 +3,8 @@ La classe rectangle
 """
 class Rectangle:
     def __init__(self, largeur, longueur):
-        self.__largeur = largeur
-        self.__longueur = longueur
+        self.largeur = largeur
+        self.longueur = longueur
 
     # Méthode pour le périmètre
     def perimetre(self):
@@ -32,7 +32,7 @@ class Rectangle:
     # "Getter" pour la longueur
     @property
     def longueur(self):
-        print("getter appelé pour la largeur")
+        print("getter appelé pour la longueur")
         return self.__longueur
 
     # "Setter" pour la largeur
@@ -47,8 +47,6 @@ class Rectangle:
 r1 = Rectangle(5,9)
 print(r1.perimetre())
 print(r1.aire())
-print(r1.largeur)
-
 
 
 """
