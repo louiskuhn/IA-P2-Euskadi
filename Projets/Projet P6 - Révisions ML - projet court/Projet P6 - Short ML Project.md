@@ -18,3 +18,12 @@ As to do so, you will have to :
 # Deliverables
 1. your Python code
 2. an **EXACTLY-5-minutes** presentation of your approach and results. The presentation itself doesn't have to be an english-speaking exercise but you can have your slides written in english. That would be another good exercise. Up to you.
+
+# Groupes
+'Guido', 'Amirouche'
+'Safaa', 'Catrin'
+'Loic', 'Alexandre'
+'Christian', 'Thomas'
+'Enyon', 'Fethi'
+'Florent', 'Ophelie'
+'Paul', 'Matthew' (?)
