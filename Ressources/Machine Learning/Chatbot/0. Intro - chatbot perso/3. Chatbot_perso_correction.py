@@ -59,7 +59,7 @@ while (flag == True):
         flag = False
     elif (re.fullmatch(bonjour, text_user)):
         print(random.choice(bjr_bot))
-    elif (re.fullmatch(sava, text_user)):
+    elif (re.fullmatch(cava, text_user)):
         print(random.choice(cava_bot))
         msg_user = input("Et toi comment ça va?\n> ")
         print(sentiments_cava(msg_user))    
