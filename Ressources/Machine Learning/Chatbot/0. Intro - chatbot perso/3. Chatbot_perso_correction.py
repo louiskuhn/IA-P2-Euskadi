@@ -9,10 +9,10 @@ bjr_bot = ["bonjour bonjour!", "salut toi ;)", "hello!"]
 cava = r".*ça va.*\?|.*forme\?|vas? bien\?"
 cava_bot = ["écoute oui ça va", "ça va bieng", "je pète la forme!"]
 
-nom = r".*appelle(s|z)?.*\?|.*nom\?"
+nom = r".*appell?e[sz]?.*\?|.*nom\?"
 nom_bot = ["Moi c'est bot. Chatbot.", "Appelle moi comme tu veux!"]
 
-age = r".*(a|â)ge.*\?"
+age = r".*[aâ]ge.*\?"
 age_bot = ["J'ai 30minutes, ça explique que je sois pas hyper développé",
            "Je suis jeune je peux pas en dire plus"]
 
