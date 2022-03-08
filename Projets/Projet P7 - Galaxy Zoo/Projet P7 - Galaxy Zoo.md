@@ -10,7 +10,7 @@ Les données sont téléchargeables ici : [galaxy zoo data](https://www.kaggle.c
 
 Combien y-a-t-il d'exemples ? Quelles sont les classes ? Sont-elles équilibrées ?
 
-## 2. Classification par modèles non Deep Learning**
+## 2. Classification par modèles non Deep Learning
 
 Il n'y a pas que le Deep Learning pour faire de la classification d'images.
 
