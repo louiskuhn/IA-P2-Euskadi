@@ -18,7 +18,7 @@ Malheureusement on a remarqué que les personnes n'indiquaient pas toujours bien
 
 Triof vous sollicite pour proposer une solution intégrant de l'IA afin de pallier ce problème. Ils vous suggèrent d'utiliser les services Cloud dans un premier temps.
 
-## $1^{ère}$ partie : questions préliminaires
+## 1ère partie : questions préliminaires
 
 ### 1. Généralités sur l'intégration d'une IA dans une application existante
 1. Expliquer en un paragraphe ce qu'est l'architecture client/serveur et quels sont ses avantages. Vous accompagnerez vos explications d'un schéma (vous pouvez par exemple utiliser https://draw.io). Veiller à la clarté du propos.
@@ -45,7 +45,7 @@ Pour cela, détailler les différents éléments de l'application :
 
 Une fois cette partie terminée, vous devez avoir une vision nette du fonctionnement de l'application, une compréhension claire du problème et une idée des solutions Cloud existantes. Vous êtes donc en mesure de proposer une solution basée sur les services IA Cloud pour répondre au problème.
 
-## $2^{ème}$ partie : une solution IA Cloud
+## 2ème partie : une solution IA Cloud
 
 Élaboration, construction et intégration d'une solution utilisant Custom Vision de Azure Cognitive Services afin d'améliorer la classification des déchets de la machine Triof. Tout est dit ;)
 
@@ -61,7 +61,9 @@ Les 2 points fondamentaux de cette étape sont :
 1. Entraîner sur Custom Vision un modèle de reconnaissance d'image permettant d'identifier les 3 types de déchets plastiques distingués par l'application (il y aura quelques étapes préalables notamment la création d'un groupe de ressources,  d'une ressource Cognitive Service et d'un projet Custom Vision)
 2. Après avoir publié le modèle pour qu'il soit mobilisable par API, intégrer un appel API dans l'application en mettant en place la solution qui vous parait la plus adaptée : précocher le type de déchet plastique, suggérer le type de déchet, etc...
 
-## $3^{ème}$ partie : une amélioration via une solution locale
+## 3ème partie : une amélioration via une solution locale
+
+#### Re-contexte
 
 On imagine que quelques mois sont sont écoulés et Triof, très satisfait de votre travail, fait de nouveau appel à vous car ils font face à un autre problème : l'insertion par les salariés de déchets plastiques **sales** ce qui entraîne là encore, un fil d'impression de moindre qualité.
 
@@ -71,7 +73,7 @@ Proposer cette fois une solution sans recourir aux services IA Cloud pour résou
 
 #### Gestion de projet Agile
 
-Mettez en place **un planning Agile pour la construction d'une solution _on-premise_**.
+Une nouvelle fois, mettez en place **un planning Agile pour la construction d'une solution _on-premise_**.
 
 #### Indications pour la mise en place de la solution *on-premise*
 - Vous êtes relativement libres sur cette partie mais l'idée est de construire un modèle permettant de classifier, en plus du type de déchet, la propreté du déchet.
@@ -80,7 +82,7 @@ Mettez en place **un planning Agile pour la construction d'une solution _on-prem
 
 ## Les livrables
 
-Voir les infos sur le passage du titre pro, vous pourrez regarder notamment la partie sur l'E2 et voir les compétences mobilisées :
+Pour ce qui est des livrables de l'E2, voir les infos sur le passage du titre pro, vous pourrez regarder notamment la partie sur l'E2 ainsi que les compétences mobilisées :
 https://github.com/louiskuhn/IA-P2-Euskadi/blob/master/Admin/Titre%20Professionnel%20Simplon/Developpeurse_en_intelligence_artificielle_Mode_demploi_passage_du_titre_1.pdf
 
 - le code de l'application finale
