@@ -448,5 +448,7 @@ MigrationBackup/
 
 # Custom files to ignore
 .ipynb_checkpoints
-/Ressources/Deep\ Learning/Recurrent\ Neural\ Network/data/Glove/
 /Projets/Projet\ P5\ -\ Flask/Projet\ P5\ -\ Flask\ -\ solution/mnist_model.sav
+/Ressources/Deep\ Learning/Recurrent\ Neural\ Network/data/Glove/
+/Ressources/Deep\ Learning/Recurrent\ Neural\ Network/model/
+
