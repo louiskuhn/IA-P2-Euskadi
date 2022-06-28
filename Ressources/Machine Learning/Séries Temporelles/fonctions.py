@@ -27,7 +27,7 @@ def ts_plot(y, lags=None, title=''):
     
     # ACF et PACF
     smt.graphics.plot_acf(y, lags=lags, ax=acf_ax, alpha=0.05)
-    smt.graphics.plot_pacf(y, lags=lags, ax=pacf_ax, alpha=0.05)
+    smt.graphics.plot_pacf(y, lags=lags, ax=pacf_ax, alpha=0.05, method="ywm")
     
     # QQ-plot
     sm.qqplot(y, line='s', ax=qq_ax)
